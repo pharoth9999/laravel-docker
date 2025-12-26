@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     public function getCategories()
     {
@@ -29,5 +30,10 @@ class CategoryController extends Controller
     public function deleteCategory($categoryId)
     {
         return ["message" => "Deleting 1 category base on given categoryId"];
+    }
+
+    public function getProducts()
+    {
+        return Product::all();
     }
 }
