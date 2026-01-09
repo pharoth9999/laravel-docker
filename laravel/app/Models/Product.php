@@ -15,6 +15,7 @@ class Product extends Model
         'pricing',
         'description',
         'images',
+        'created_by',
     ];
 
     protected $casts = [
@@ -28,5 +29,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 }
